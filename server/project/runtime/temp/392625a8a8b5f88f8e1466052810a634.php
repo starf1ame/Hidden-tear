@@ -1,0 +1,82 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"/Library/WebServer/project/public/../application/index/view/index/index.html";i:1555255263;}*/ ?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Pay for your files</title>
+        <style>
+        body {
+            font-family:"Microsoft Yahei","Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-size:16px;
+            padding:5px;
+        }
+        .form .text {
+            padding: 3px;
+            margin:2px 10px;
+            width: 240px;
+            height: 24px;
+            line-height: 28px;
+            border: 1px solid #d4d4d4;
+        }
+        .form .btn{
+            margin: 6px;
+            padding: 6px;
+            width: 120px;
+
+            font-size: 16px;
+            border: 1px solid #d4d4d4;
+            cursor: pointer;
+            background: #eee;
+        }
+        a{
+            color: #868686;
+            cursor: pointer;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+        h2{
+            color: #4288ce;
+            font-weight: 400;
+            padding: 6px 0;
+            margin: 6px 0 0;
+            font-size: 28px;
+            border-bottom: 1px solid #eee;
+        }
+        div{
+            margin: 8px;
+        }
+        .info{
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .copyright{
+            margin-top: 24px;
+            padding: 12px 0;
+            border-top: 1px solid #eee;
+        }
+        </style>
+    </head>
+    <body>
+    <center>
+        <h2>赎买文件</h2>
+        <form method="POST" class="form" action="index/index/index/showinfo">
+        感染序列:<input type="text" class="text" name="id"><br/>
+        机器名称:<input type="text" class="text" name="pcname"><br/>
+        <!-- 处理器号:<input type="text" class="text" name="cpuid"><br/> -->
+        <input type="hidden" name="__token__" value="<?php echo \think\Request::instance()->token(); ?>" />
+        <input type="submit" class="btn" value="确认查询">
+        </form>
+        <div class="copyright">
+            <a title="Know More" href="https://github.com/YZ-WANG/Hidden-tear">Know more about</a>
+            <span>Hidden-tear</span>
+            <span>{Xrosheart}</span>
+        </div>
+        <tr>
+        <td>
+            <img src="upload/IMG.JPG" width=350 border=0 >
+        </td>
+        </tr>
+    </center>
+    </body>
+</html>

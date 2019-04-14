@@ -1,0 +1,31 @@
+---------------------------------------------------------------
+[ 2019-04-12T22:35:44+08:00 ] 0.0.0.0 GET localhost/project/public/
+[运行时间：0.005319s] [吞吐率：188.00req/s] [内存消耗：252.22kb] [文件加载：43]
+[ info ] [ LANG ] /Library/WebServer/project/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'cookie' => 'pgv_si=s6567659520; PHPSESSID=9jpheie5s4vu97k6scb4va7ana; Pycharm-1ae50e=08a548ad-ca5d-4b85-92b8-9439abe3e961; pgv_pvi=8250021888',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.3 Safari/605.1.15',
+  'referer' => 'http://localhost/project/',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ /Library/WebServer/project/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /Library/WebServer/project/public/../application/index/view/index/hello.html [ array (
+  0 => 'name',
+) ]
+[ info ] [ LOG ] INIT File

@@ -1,0 +1,578 @@
+---------------------------------------------------------------
+[ 2019-04-15T01:36:08+08:00 ] 127.0.0.1 POST 127.0.0.1:80/project/public/index.php/index/index/storeKeys
+[运行时间：0.070775s] [吞吐率：14.13req/s] [内存消耗：401.94kb] [文件加载：46]
+[ info ] [ LANG ] /Library/WebServer/project/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'storeKeys',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:80',
+  'accept' => '*/*',
+  'content-length' => '115',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'connection' => 'close',
+)
+[ info ] [ PARAM ] array (
+  'pcname' => 'wangyizhuodeMacBook-Pro.local',
+  'aeskey' => '9AB674F5E6B2FF1DDE2B975E2D260C17',
+  'aesiv' => '95F6FC0688CE2151FFF249E948A0E952',
+)
+[ info ] [ RUN ] app\index\controller\Index->storeKeys[ /Library/WebServer/project/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000746s ] mysql:host=127.0.0.1;dbname=tears;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `victimInfo` [ RunTime:0.003829s ]
+[ sql ] [ SQL ] INSERT INTO `victimInfo` (`pcname` , `AESkey` , `AESiv` , `paid`) VALUES ('wangyizhuodeMacBook-Pro.local' , '9AB674F5E6B2FF1DDE2B975E2D260C17' , '95F6FC0688CE2151FFF249E948A0E952' , 1) [ RunTime:0.001970s ]
+---------------------------------------------------------------
+[ 2019-04-15T01:36:08+08:00 ] 127.0.0.1 POST 127.0.0.1:80/project/public/index.php/index/index/releaseKeys
+[运行时间：0.007559s] [吞吐率：132.29req/s] [内存消耗：430.54kb] [文件加载：46]
+[ info ] [ LANG ] /Library/WebServer/project/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'releaseKeys',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:80',
+  'accept' => '*/*',
+  'content-length' => '5',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'connection' => 'close',
+)
+[ info ] [ PARAM ] array (
+  'id' => '31',
+)
+[ info ] [ RUN ] app\index\controller\Index->releaseKeys[ /Library/WebServer/project/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000802s ] mysql:host=127.0.0.1;dbname=tears;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `victimInfo` [ RunTime:0.000927s ]
+[ sql ] [ SQL ] SELECT `paid` FROM `victimInfo` WHERE  `id` = 31 LIMIT 1 [ RunTime:0.000435s ]
+---------------------------------------------------------------
+[ 2019-04-15T01:37:29+08:00 ] 127.0.0.1 POST 127.0.0.1:80/project/public/index.php/index/index/storeKeys
+[运行时间：0.009700s] [吞吐率：103.09req/s] [内存消耗：401.87kb] [文件加载：46]
+[ info ] [ LANG ] /Library/WebServer/project/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'storeKeys',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:80',
+  'accept' => '*/*',
+  'content-length' => '115',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'connection' => 'close',
+)
+[ info ] [ PARAM ] array (
+  'pcname' => 'wangyizhuodeMacBook-Pro.local',
+  'aeskey' => '7AEA633C2F3BDB67E9CDD826E7B0F24A',
+  'aesiv' => '3627CE07CD2D6B98F2CDE5EEF0A2652A',
+)
+[ info ] [ RUN ] app\index\controller\Index->storeKeys[ /Library/WebServer/project/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000614s ] mysql:host=127.0.0.1;dbname=tears;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `victimInfo` [ RunTime:0.000850s ]
+[ sql ] [ SQL ] INSERT INTO `victimInfo` (`pcname` , `AESkey` , `AESiv` , `paid`) VALUES ('wangyizhuodeMacBook-Pro.local' , '7AEA633C2F3BDB67E9CDD826E7B0F24A' , '3627CE07CD2D6B98F2CDE5EEF0A2652A' , 0) [ RunTime:0.003146s ]
+---------------------------------------------------------------
+[ 2019-04-15T01:37:29+08:00 ] 127.0.0.1 POST 127.0.0.1:80/project/public/index.php/index/index/releaseKeys
+[运行时间：0.007666s] [吞吐率：130.45req/s] [内存消耗：430.54kb] [文件加载：46]
+[ info ] [ LANG ] /Library/WebServer/project/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'releaseKeys',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:80',
+  'accept' => '*/*',
+  'content-length' => '5',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'connection' => 'close',
+)
+[ info ] [ PARAM ] array (
+  'id' => '31',
+)
+[ info ] [ RUN ] app\index\controller\Index->releaseKeys[ /Library/WebServer/project/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000672s ] mysql:host=127.0.0.1;dbname=tears;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `victimInfo` [ RunTime:0.000895s ]
+[ sql ] [ SQL ] SELECT `paid` FROM `victimInfo` WHERE  `id` = 31 LIMIT 1 [ RunTime:0.000399s ]
+---------------------------------------------------------------
+[ 2019-04-15T01:39:10+08:00 ] 127.0.0.1 POST 127.0.0.1:80/project/public/index.php/index/index/storeKeys
+[运行时间：0.004983s] [吞吐率：200.68req/s] [内存消耗：401.87kb] [文件加载：46]
+[ info ] [ LANG ] /Library/WebServer/project/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'storeKeys',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:80',
+  'accept' => '*/*',
+  'content-length' => '115',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'connection' => 'close',
+)
+[ info ] [ PARAM ] array (
+  'pcname' => 'wangyizhuodeMacBook-Pro.local',
+  'aeskey' => 'FE005DDBF22C2ACDB37450CD1FF5D04F',
+  'aesiv' => '2E59566B6C6F4DEBAC5CE0B29AA9A6EC',
+)
+[ info ] [ RUN ] app\index\controller\Index->storeKeys[ /Library/WebServer/project/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000524s ] mysql:host=127.0.0.1;dbname=tears;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `victimInfo` [ RunTime:0.000756s ]
+[ sql ] [ SQL ] INSERT INTO `victimInfo` (`pcname` , `AESkey` , `AESiv` , `paid`) VALUES ('wangyizhuodeMacBook-Pro.local' , 'FE005DDBF22C2ACDB37450CD1FF5D04F' , '2E59566B6C6F4DEBAC5CE0B29AA9A6EC' , 1) [ RunTime:0.001291s ]
+---------------------------------------------------------------
+[ 2019-04-15T01:39:10+08:00 ] 127.0.0.1 POST 127.0.0.1:80/project/public/index.php/index/index/releaseKeys
+[运行时间：0.003661s] [吞吐率：273.16req/s] [内存消耗：430.54kb] [文件加载：46]
+[ info ] [ LANG ] /Library/WebServer/project/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'releaseKeys',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:80',
+  'accept' => '*/*',
+  'content-length' => '5',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'connection' => 'close',
+)
+[ info ] [ PARAM ] array (
+  'id' => '31',
+)
+[ info ] [ RUN ] app\index\controller\Index->releaseKeys[ /Library/WebServer/project/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000549s ] mysql:host=127.0.0.1;dbname=tears;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `victimInfo` [ RunTime:0.000944s ]
+[ sql ] [ SQL ] SELECT `paid` FROM `victimInfo` WHERE  `id` = 31 LIMIT 1 [ RunTime:0.000371s ]
+---------------------------------------------------------------
+[ 2019-04-15T01:44:14+08:00 ] 0.0.0.0 GET localhost/project/public/
+[运行时间：0.043617s] [吞吐率：22.93req/s] [内存消耗：249.62kb] [文件加载：41]
+[ info ] [ LANG ] /Library/WebServer/project/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'cookie' => 'PHPSESSID=9kndq7h8k8o4h1gh2saacnfrlc; pgv_si=s3100760064; Pycharm-1ae50e=08a548ad-ca5d-4b85-92b8-9439abe3e961; pgv_pvi=8250021888',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.3 Safari/605.1.15',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'gzip, deflate',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ /Library/WebServer/project/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /Library/WebServer/project/public/../application/index/view/index/index.html [ array (
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-15T01:44:15+08:00 ] 0.0.0.0 GET localhost/project/public/
+[运行时间：0.001369s] [吞吐率：730.46req/s] [内存消耗：248.41kb] [文件加载：41]
+[ info ] [ LANG ] /Library/WebServer/project/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'cookie' => 'PHPSESSID=9kndq7h8k8o4h1gh2saacnfrlc; pgv_si=s3100760064; Pycharm-1ae50e=08a548ad-ca5d-4b85-92b8-9439abe3e961; pgv_pvi=8250021888',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.3 Safari/605.1.15',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'gzip, deflate',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ /Library/WebServer/project/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /Library/WebServer/project/public/../application/index/view/index/index.html [ array (
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-15T01:44:36+08:00 ] 0.0.0.0 POST localhost/project/public/index/index/index/showinfo
+[运行时间：0.051179s] [吞吐率：19.54req/s] [内存消耗：490.87kb] [文件加载：53]
+[ info ] [ LANG ] /Library/WebServer/project/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'showinfo',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.3 Safari/605.1.15',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'referer' => 'http://localhost/project/public/',
+  'content-length' => '84',
+  'cookie' => 'PHPSESSID=9kndq7h8k8o4h1gh2saacnfrlc; pgv_si=s3100760064; Pycharm-1ae50e=08a548ad-ca5d-4b85-92b8-9439abe3e961; pgv_pvi=8250021888',
+)
+[ info ] [ PARAM ] array (
+  'id' => '3',
+  'pcname' => 'wangyizhuodeMacBook-Pro.local',
+  '__token__' => '0232f5f0ff42e5206ee2619b82e0909f',
+)
+[ info ] [ RUN ] app\index\controller\Index->showinfo[ /Library/WebServer/project/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000700s ] mysql:host=127.0.0.1;dbname=tears;charset=utf8
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tears.tears' doesn't exist[/Library/WebServer/project/thinkphp/library/think/db/Connection.php:385]
+---------------------------------------------------------------
+[ 2019-04-15T01:45:47+08:00 ] 0.0.0.0 GET localhost/project/public/
+[运行时间：0.002214s] [吞吐率：451.68req/s] [内存消耗：248.41kb] [文件加载：41]
+[ info ] [ LANG ] /Library/WebServer/project/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'cookie' => 'PHPSESSID=9kndq7h8k8o4h1gh2saacnfrlc; pgv_si=s3100760064; Pycharm-1ae50e=08a548ad-ca5d-4b85-92b8-9439abe3e961; pgv_pvi=8250021888',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.3 Safari/605.1.15',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'gzip, deflate',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ /Library/WebServer/project/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /Library/WebServer/project/public/../application/index/view/index/index.html [ array (
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-15T01:45:50+08:00 ] 0.0.0.0 POST localhost/project/public/index/index/index/showinfo
+[运行时间：0.007560s] [吞吐率：132.27req/s] [内存消耗：536.12kb] [文件加载：51]
+[ info ] [ LANG ] /Library/WebServer/project/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'showinfo',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.3 Safari/605.1.15',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'referer' => 'http://localhost/project/public/',
+  'content-length' => '84',
+  'cookie' => 'PHPSESSID=9kndq7h8k8o4h1gh2saacnfrlc; pgv_si=s3100760064; Pycharm-1ae50e=08a548ad-ca5d-4b85-92b8-9439abe3e961; pgv_pvi=8250021888',
+)
+[ info ] [ PARAM ] array (
+  'id' => '3',
+  'pcname' => 'wangyizhuodeMacBook-Pro.local',
+  '__token__' => '5961ae0da93b2a6e0346e51c28b0788c',
+)
+[ info ] [ RUN ] app\index\controller\Index->showinfo[ /Library/WebServer/project/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /Library/WebServer/project/public/../application/index/view/index/showinfo.html [ array (
+  0 => 'vict_info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000476s ] mysql:host=127.0.0.1;dbname=tears;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `victimInfo` [ RunTime:0.000697s ]
+[ sql ] [ SQL ] SELECT * FROM `victimInfo` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000360s ]
+---------------------------------------------------------------
+[ 2019-04-15T01:45:59+08:00 ] 0.0.0.0 POST localhost/project/public/index/index/index/showinfo
+[运行时间：0.004196s] [吞吐率：238.31req/s] [内存消耗：460.72kb] [文件加载：49]
+[ info ] [ LANG ] /Library/WebServer/project/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'showinfo',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.3 Safari/605.1.15',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'referer' => 'http://localhost/project/public/',
+  'content-length' => '84',
+  'cookie' => 'PHPSESSID=9kndq7h8k8o4h1gh2saacnfrlc; pgv_si=s3100760064; Pycharm-1ae50e=08a548ad-ca5d-4b85-92b8-9439abe3e961; pgv_pvi=8250021888',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+  'pcname' => 'wangyizhuodeMacBook-Pro.local',
+  '__token__' => '5961ae0da93b2a6e0346e51c28b0788c',
+)
+[ info ] [ RUN ] app\index\controller\Index->showinfo[ /Library/WebServer/project/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000540s ] mysql:host=127.0.0.1;dbname=tears;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `victimInfo` [ RunTime:0.000703s ]
+[ sql ] [ SQL ] SELECT * FROM `victimInfo` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000346s ]
+---------------------------------------------------------------
+[ 2019-04-15T01:45:59+08:00 ] 0.0.0.0 GET localhost/project/public/
+[运行时间：0.001735s] [吞吐率：576.30req/s] [内存消耗：249.40kb] [文件加载：41]
+[ info ] [ LANG ] /Library/WebServer/project/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'origin' => 'http://localhost',
+  'cookie' => 'PHPSESSID=9kndq7h8k8o4h1gh2saacnfrlc; pgv_si=s3100760064; Pycharm-1ae50e=08a548ad-ca5d-4b85-92b8-9439abe3e961; pgv_pvi=8250021888',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.3 Safari/605.1.15',
+  'referer' => 'http://localhost/project/public/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ /Library/WebServer/project/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /Library/WebServer/project/public/../application/index/view/index/index.html [ array (
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-15T01:46:39+08:00 ] 0.0.0.0 POST localhost/project/public/index/index/index/showinfo
+[运行时间：0.004452s] [吞吐率：224.62req/s] [内存消耗：461.81kb] [文件加载：49]
+[ info ] [ LANG ] /Library/WebServer/project/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'showinfo',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.3 Safari/605.1.15',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'referer' => 'http://localhost/project/public/',
+  'content-length' => '84',
+  'cookie' => 'PHPSESSID=9kndq7h8k8o4h1gh2saacnfrlc; pgv_si=s3100760064; Pycharm-1ae50e=08a548ad-ca5d-4b85-92b8-9439abe3e961; pgv_pvi=8250021888',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+  'pcname' => 'wangyizhuodeMacBook-Pro.local',
+  '__token__' => '36e59b83b18bbaaf50b6744e0eeafca4',
+)
+[ info ] [ RUN ] app\index\controller\Index->showinfo[ /Library/WebServer/project/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000487s ] mysql:host=127.0.0.1;dbname=tears;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `victimInfo` [ RunTime:0.000788s ]
+[ sql ] [ SQL ] SELECT * FROM `victimInfo` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000354s ]
+---------------------------------------------------------------
+[ 2019-04-15T01:46:39+08:00 ] 0.0.0.0 GET localhost/project/public/
+[运行时间：0.001241s] [吞吐率：805.82req/s] [内存消耗：249.40kb] [文件加载：41]
+[ info ] [ LANG ] /Library/WebServer/project/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'origin' => 'http://localhost',
+  'cookie' => 'PHPSESSID=9kndq7h8k8o4h1gh2saacnfrlc; pgv_si=s3100760064; Pycharm-1ae50e=08a548ad-ca5d-4b85-92b8-9439abe3e961; pgv_pvi=8250021888',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.3 Safari/605.1.15',
+  'referer' => 'http://localhost/project/public/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ /Library/WebServer/project/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /Library/WebServer/project/public/../application/index/view/index/index.html [ array (
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-04-15T01:51:56+08:00 ] 127.0.0.1 POST 127.0.0.1:80/project/public/index.php/index/index/storeKeys
+[运行时间：0.006478s] [吞吐率：154.37req/s] [内存消耗：402.37kb] [文件加载：46]
+[ info ] [ LANG ] /Library/WebServer/project/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'storeKeys',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:80',
+  'accept' => '*/*',
+  'content-length' => '115',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'connection' => 'close',
+)
+[ info ] [ PARAM ] array (
+  'pcname' => 'wangyizhuodeMacBook-Pro.local',
+  'aeskey' => 'ECBED949F06181F3ACC08E6CBAB97958',
+  'aesiv' => '2B114C32E3C1BEEB30CF7B46AA013292',
+)
+[ info ] [ RUN ] app\index\controller\Index->storeKeys[ /Library/WebServer/project/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000523s ] mysql:host=127.0.0.1;dbname=tears;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `victimInfo` [ RunTime:0.001689s ]
+[ sql ] [ SQL ] INSERT INTO `victimInfo` (`pcname` , `AESkey` , `AESiv` , `paid`) VALUES ('wangyizhuodeMacBook-Pro.local' , 'ECBED949F06181F3ACC08E6CBAB97958' , '2B114C32E3C1BEEB30CF7B46AA013292' , 0) [ RunTime:0.001450s ]
+---------------------------------------------------------------
+[ 2019-04-15T01:51:56+08:00 ] 127.0.0.1 POST 127.0.0.1:80/project/public/index.php/index/index/releaseKeys
+[运行时间：0.004227s] [吞吐率：236.57req/s] [内存消耗：430.54kb] [文件加载：46]
+[ info ] [ LANG ] /Library/WebServer/project/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'releaseKeys',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1:80',
+  'accept' => '*/*',
+  'content-length' => '5',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'connection' => 'close',
+)
+[ info ] [ PARAM ] array (
+  'id' => '31',
+)
+[ info ] [ RUN ] app\index\controller\Index->releaseKeys[ /Library/WebServer/project/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000651s ] mysql:host=127.0.0.1;dbname=tears;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `victimInfo` [ RunTime:0.000799s ]
+[ sql ] [ SQL ] SELECT `paid` FROM `victimInfo` WHERE  `id` = 31 LIMIT 1 [ RunTime:0.000400s ]
