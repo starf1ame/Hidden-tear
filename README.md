@@ -1,21 +1,58 @@
 # Hidden-tear
 A ransomware written in C++, achieve the functions of hidden tear.
 
-## Workflow
+         _     _     _     _              _                  
+        | |   (_)   | |   | |            | |                 
+        | |__  _  __| | __| | ___ _ __   | |_ ___  __ _ _ __ 
+        | '_ \| |/ _` |/ _` |/ _ \ '_ \  | __/ _ \/ _` | '__|
+        | | | | | (_| | (_| |  __/ | | | | ||  __/ (_| | |   
+        |_| |_|_|\__,_|\__,_|\___|_| |_|  \__\___|\__,_|_|   
+                                                     
 
-* Program sends a POST request to the C&C server with pc_name and user_name variables.
-* C&C server creates RSA public/private key pair. Sends public key to the program, saves private key inside the Mysql database
-* Program creates a random key for AES algorithm
-* Program encrypts files with AES algorithm
-* Program encrypts AES key with RSA public key and sends it to the C&C server with POST request
-* C&C server saves encrypted AES key inside the Mysql Database
+## Introduction
 
-## TODO list
+It's a ransomware-like file crypter sample which can be modified for specific purposes. It's more extended version of hidden tear.
 
-1. Local program to encrpt files with AES algorithm
-2. Build a C&C server, make interaction (local program sends post to server)
-3. Achieve creating RSA keys and interact with Mysql database
+## Features
 
-## goal
+* Uses both RSA and AES algorithms.
+* Coordinates with a Command&Control server.
+* Uses CSPRNG
+* Uses phplibsec
+* Encrypted files can be decrypted in decryption program with encryption key.
+* Changes desktop background.
 
-At last, we can achieve functions like: https://www.youtube.com/watch?v=PD16u1Rz2QI
+## Workflows
+
+1. Program runs to get username/CpuHash/VolumeHash, then generates RSA keys and sends private key to the server while saving public key on PC;
+
+2. Generate a random key for AES encrypt using; Run AES algorithm to encrypt target files;
+
+3. Program encrypts aes key with RSA public key and send to server; Sever get the cipher and store it;
+
+4. Delete private key and original files
+
+## Usage
+
+### Server
+
+The recommend environment is:
+
+* Server version: Apache/2.4.33 (Unix)
+* thinkPHP 5.0.24 with PHP 7.3.3 (cli) 
+* Server version: 5.7.20 MySQL Community Server (GPL)
+
+### Pc program
+
+Two necessary C++ library used in program:
+
+* boost 1.67.0_1
+* cryptopp/8.1.0
+
+If you want to compile or even deveplop the program, you must install then.
+
+If you just want to test or just watch the visualization of workflow, you can just download and use executable files.
+
+## Legal Warning
+
+While this may be helpful for some, there are significant risks. Hidden tear may be used only for Educational Purposes. Do not use it as a ransomware! You could go to jail on obstruction of justice charges just for running Hidden tear, even though you are innocent.
