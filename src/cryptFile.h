@@ -1,6 +1,8 @@
 #include "config.h"
 
 // declairations of functions uesd
+////////////////////////////////////////////////
+// functions for aes use
 struct crypt_data {
 	unsigned char key[KEY_LEN];
 	unsigned char iv[IV_LEN];
@@ -12,6 +14,27 @@ void encrypt(const crypt_data* data, string path);
 void decrypt(const crypt_data* data, string path);
 crypt_data* generatekey();
 void hex_to_byte_key(crypt_data* data);
+
+////////////////////////////////////////////////
+// functions for rsa use
+void Rsa_run();
+void SavePrivateKey(const string& filename, const PrivateKey& key);
+void SavePublicKey(const string& filename, const PublicKey& key);
+
+void SaveBase64PrivateKey(const string& filename, const PrivateKey& key);
+void SaveBase64PublicKey(const string& filename, const PublicKey& key);
+
+void Save(const string& filename, const BufferedTransformation& bt);
+void SaveBase64(const string& filename, const BufferedTransformation& bt);
+
+void LoadPrivateKey(const string& filename, PrivateKey& key);
+void LoadPublicKey(const string& filename, PublicKey& key);
+
+void LoadBase64PrivateKey(const string& filename, PrivateKey& key);
+void LoadBase64PublicKey(const string& filename, PublicKey& key);
+
+void LoadBase64(const string& filename, BufferedTransformation& bt);
+void Load(const string& filename, BufferedTransformation& bt);
 
 ////////////////////////////////////////////////
 // generatr key
@@ -189,3 +212,153 @@ void decrypt(const crypt_data* data, string path) {
 	ofile.close();
 }
 ////////////////////////////////////////////////
+// functions for rsa declairations
+void Rsa_run()
+{
+	AutoSeededRandomPool rng;
+    InvertibleRSAFunction parameters;
+    parameters.GenerateRandomWithKeySize( rng, 1024 ); //generate a 1024bit key
+
+    const Integer& n = parameters.GetModulus();
+    const Integer& p = parameters.GetPrime1();
+    const Integer& q = parameters.GetPrime2();
+    const Integer& d = parameters.GetPrivateExponent();
+    const Integer& e = parameters.GetPublicExponent();
+    // cout << "RSA Parameters:" << endl;
+    // cout << " n: " << std::hex << n << endl;    //n=p*q
+    // cout << " p: " << std::hex << p << endl;    //p
+    // cout << " q: " << std::hex << q << endl;    //q
+    // cout << " d: " << std::hex << d << endl;    
+    // cout << " e: " << std::hex << e << endl;    
+    // cout << endl; 
+
+    //Generate public and private key
+    RSA::PrivateKey privateKey( parameters );//私钥用于加密(n,d)
+    RSA::PublicKey  publicKey( parameters ); //公钥用于解密(n,e)
+
+    //Save base64 keys to files
+    SaveBase64PrivateKey("rsa-base64-private.key", privateKey);
+    SaveBase64PublicKey("rsa-base64-public.key", publicKey);
+
+	//Read K_r and K_u from files
+    RSA::PublicKey  public_Key;
+    LoadBase64PublicKey("rsa-base64-public.key", public_Key);
+
+    string text= "你好世界", encrypted_text, decrypted_text; 
+    // Use public key to encrypt
+    RSAES_OAEP_SHA_Encryptor encryptor( public_Key );
+    StringSource( text, true,
+        new PK_EncryptorFilter(rng, encryptor,
+        new StringSink( encrypted_text )
+        ) 
+    ); 
+
+    // Use private key to decrypt
+    RSAES_OAEP_SHA_Decryptor decryptor( privateKey );
+
+    StringSource( encrypted_text, true,
+        new PK_DecryptorFilter( rng, decryptor,
+        new StringSink( decrypted_text )
+        )
+    ); 
+    cout << decrypted_text << endl;
+}
+
+void Save(const string& filename, const BufferedTransformation& bt)
+{
+    FileSink file(filename.c_str());
+
+    bt.CopyTo(file);
+    file.MessageEnd();
+}
+
+void SaveBase64(const string& filename, const BufferedTransformation& bt)
+{
+    Base64Encoder encoder;
+
+    bt.CopyTo(encoder);
+    encoder.MessageEnd();
+
+    Save(filename, encoder);
+}
+
+void SavePrivateKey(const string& filename, const PrivateKey& key)
+{
+    ByteQueue queue;
+    key.Save(queue);
+
+    Save(filename, queue);
+}
+
+void SavePublicKey(const string& filename, const PublicKey& key)
+{
+    ByteQueue queue;
+    key.Save(queue);
+
+    Save(filename, queue);
+}
+
+void SaveBase64PrivateKey(const string& filename, const PrivateKey& key)
+{
+    ByteQueue queue;
+    key.Save(queue);
+
+    SaveBase64(filename, queue);
+}
+
+void SaveBase64PublicKey(const string& filename, const PublicKey& key)
+{
+    ByteQueue queue;
+    key.Save(queue);
+
+    SaveBase64(filename, queue);
+}
+
+void LoadPrivateKey(const string& filename, PrivateKey& key)
+{
+    ByteQueue queue;
+
+    Load(filename, queue);
+    key.Load(queue);    
+}
+
+void LoadPublicKey(const string& filename, PublicKey& key)
+{
+    ByteQueue queue;
+
+    Load(filename, queue);
+    key.Load(queue);    
+}
+
+void Load(const string& filename, BufferedTransformation& bt)
+{
+    FileSource file(filename.c_str(), true /*pumpAll*/);
+
+    file.TransferTo(bt);
+    bt.MessageEnd();
+}
+
+void LoadBase64(const string& filename, BufferedTransformation& bt)
+{
+    Base64Decoder decoder;
+    Load(filename,decoder);
+
+    decoder.CopyTo(bt);
+    bt.MessageEnd();
+}
+
+void LoadBase64PrivateKey(const string& filename, PrivateKey& key)
+{
+    ByteQueue queue;
+
+    LoadBase64(filename, queue);
+    key.Load(queue);    
+}
+
+void LoadBase64PublicKey(const string& filename, PublicKey& key)
+{
+    ByteQueue queue;
+
+    LoadBase64(filename, queue);
+    key.Load(queue);    
+}
