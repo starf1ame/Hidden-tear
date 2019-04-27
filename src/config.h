@@ -11,6 +11,13 @@
 #include <cryptopp/filters.h>
 #include <cryptopp/files.h>
 #include <cryptopp/ccm.h>
+#include <cryptopp/SecBlock.h>
+#include <cryptopp/sha.h>
+#include <stdexcept>
+#include <exception>
+#include <cryptopp/queue.h>
+#include <cryptopp/integer.h>
+#include <cryptopp/base64.h>
 
 using namespace boost::filesystem;
 using namespace CryptoPP;
