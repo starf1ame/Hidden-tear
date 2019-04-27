@@ -32,7 +32,7 @@ It's a ransomware-like file crypter sample which can be modified for specific pu
 
 4. Delete private key and original files
 
-## Usage
+## Config for development
 
 ### Server
 
@@ -52,6 +52,13 @@ Two necessary C++ library used in program:
 If you want to compile or even deveplop the program, you must install then.
 
 If you just want to test or just watch the visualization of workflow, you can just download and use executable files.
+
+## usage
+
+* The hole project of PC is in ./src, just compile the encrypt.cpp and decrypt.cpp to get exe;
+* The hole project of server is in ./server, just do like the readme.md in server do;
+* To test the aes algorothm, you can use the code in ./test;
+* To test the project in pc, you can use the code in ./demo
 
 ## Legal Warning
 
