@@ -4,6 +4,7 @@
 #include "pcID.h"
 #include <cstdio>
 #include <fstream>
+#include "setbackground.h"
 
 using namespace std;
 
