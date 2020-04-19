@@ -11,5 +11,4 @@ This is for windows, change background for mac and ubuntu is in encrypt.cpp(by c
 void setbackground() {
 	PVOID s = (PVOID)"C:\\Users\\lenovo\\Desktop\\background.png";
 	SystemParametersInfo(20, true, s, 1);
-	return 0;
 }
